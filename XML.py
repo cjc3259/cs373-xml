@@ -80,4 +80,20 @@ def xml_solve (r, w) :
     w is a writer
     """
     
-    
+    read_list = r.readlines() #list of strings by line
+    # print len(read_list)
+    case_list = []
+    q_string = ''
+    t_string = ''
+
+    while xml_read (read_list, case_list) :
+        q_string = case_list[len(case_list) - 1]
+        case_list.pop()
+        t_string = " ".join(case_list)
+        print t_string
+        print q_string
+        xml_eval (t_string, q_string)
+        # xml_print(w, a[0], a[1], v)
+        # i = tree.getiterator()
+        # print i
+        case_list[:] = []
