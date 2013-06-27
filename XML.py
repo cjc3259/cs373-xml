@@ -15,7 +15,6 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import fromstring
 from cStringIO import StringIO
 
-
 def xml_read (r, c) :
     """
     r is a list of strings of the remaining input by line
@@ -39,7 +38,6 @@ def xml_read (r, c) :
 
     assert len(c) > 0
     return True
-
 
 # ------------
 # xml_eval
@@ -85,6 +83,42 @@ def xml_eval (c, q) :
         this_it = query_parent[this_it]
         q_count += 1
 
+    ## parse query into XPath ##
+    XPath = './'
+
+    traversed = []
+    def parse(q_it):
+        """
+        takes a query element and parses the XML into an XPath for the associated element
+        """
+
+        this_XPath = '' 
+        if q_it not in traversed:
+            this_XPath += '/' + str(q_it.tag)
+            traversed.append(q_it)
+
+        # iterated through all the elements
+        if len(traversed) == len(query_it):
+            return this_XPath 
+
+        children = q_it.getchildren()
+
+        # if element has children
+        if children:
+            for i in children:
+                if i not in traversed:
+                    return this_XPath 
+            return this_XPath + '/..'
+
+        # if element does not have children
+        else:
+            return this_XPath + '/..' + parse(query_parent[q_it])
+
+    # loop through all of the subelements in the query
+    for i in query_it:
+        XPath += parse(i)
+
+    print XPath
 
     ## actual evaluation ##
     eval_list = tree.getroot().findall(XPath)
@@ -102,7 +136,6 @@ def xml_eval (c, q) :
     
     return output
     
-
 # -------------
 # xml_print
 # -------------
