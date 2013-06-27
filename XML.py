@@ -53,6 +53,54 @@ def xml_eval (c, q) :
     """
     # <your code>
 
+    ## setup tree structure for this case ##
+    tree = ElementTree.parse(StringIO(c))
+    tree_root = tree.getroot()
+    tree_it = tree.getiterator()
+
+    # assigns key values to all elements
+    t_k = 1
+    for i in tree_it:
+        i.attrib['t_key'] = t_k
+        t_k += 1
+
+     # maps all elements to their parents
+    tree_parent = dict((tc, tp) for tp in tree_it for tc in tp)
+
+
+    ## setup tree structure for query ##
+    query = ElementTree.parse(StringIO(q))
+    query_root = query.getroot()
+    query_it = query.getiterator()
+
+    # maps all elements to their parents
+    query_parent = dict((qc, qp) for qp in query_it for qc in qp)
+
+    ## determine path from last element in query to root ##
+    this_it = query_it[len(query_it) - 1]
+    q_count = 0  # use this number to find output from tree
+    for i in query_it:
+        if this_it == query_it[0]:
+            break
+        this_it = query_parent[this_it]
+        q_count += 1
+
+
+    ## actual evaluation ##
+    eval_list = tree.getroot().findall(XPath)
+     
+    output = [len(eval_list)]
+    for i in range(len(eval_list)):
+        output_key = 0
+        output_it = eval_list[i]
+        for j in range(q_count):
+            output_it = tree_parent[output_it]
+        output.append(output_it.get('t_key'))
+
+    for i in output:
+        print i
+    
+    return output
     
 
 # -------------
