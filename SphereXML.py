@@ -6,11 +6,24 @@
 # Glenn P. Downing
 # -------------------------------
 
-# ------------
-# xml_read
-# ------------
+"""
+To run the program
+    % python RunXML.py < RunXML.in > RunXML.out
+    % chmod ugo+x RunXML.py
+    % RunXML.py < RunXML.in > RunXML.out
 
-# from xml.etree.ElementTree import fromstring, ElementTree
+To document the program
+    % pydoc -w XML
+"""
+
+# -------
+# imports
+# -------
+
+import sys
+
+# from XML import xml_solve
+
 from xml.etree import ElementTree
 from xml.etree.ElementTree import fromstring
 from cStringIO import StringIO
@@ -37,7 +50,6 @@ def xml_read (r, c) :
         space = r.pop(0)
 
     assert len(c) > 0
-
     return True
 
 # ------------
@@ -145,11 +157,9 @@ def xml_print (w, l) :
     """
     # w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
     for i in l:
-        # print i
         w.write(str(i) + '\n')
 
     w.write('\n')
-    # print w.getvalue()
 
 
 # -------------
@@ -180,3 +190,8 @@ def xml_solve (r, w) :
         xml_print(w, output)
         case_list[:] = []
 
+# ----
+# main
+# ----
+
+xml_solve(sys.stdin, sys.stdout)
