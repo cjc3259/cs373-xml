@@ -12,4 +12,20 @@
 		</Team>
 	</JiaJia>
 </THU>
-<THU></THU>
+<Team><Cooly></Cooly></Team>
+
+<THU>
+	<Team>
+		<ACRush></ACRush>
+		<Jelly></Jelly>
+		<Cooly></Cooly>
+	</Team>
+	<JiaJia>
+		<Team>
+			<Ahyangyi></Ahyangyi>
+			<Dragon></Dragon>
+			<Cooly><Amber></Amber></Cooly>
+		</Team>
+	</JiaJia>
+</THU>
+<JiaJia><Team><Cooly><Amber></Amber></Cooly><Dragon></Dragon></Team></JiaJia>

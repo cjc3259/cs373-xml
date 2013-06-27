@@ -118,7 +118,7 @@ def xml_eval (c, q) :
     for i in query_it:
         XPath += parse(i)
 
-    print XPath
+    # print XPath
 
     ## actual evaluation ##
     eval_list = tree.getroot().findall(XPath)
@@ -130,9 +130,6 @@ def xml_eval (c, q) :
         for j in range(q_count):
             output_it = tree_parent[output_it]
         output.append(output_it.get('t_key'))
-
-    for i in output:
-        print i
     
     return output
     
@@ -140,15 +137,17 @@ def xml_eval (c, q) :
 # xml_print
 # -------------
 
-def xml_print (w, i, j, v) :
+def xml_print (w, l) :
     """
-    prints the values of i, j, and v
+    prints the values in output
     w is a writer
-    i is the beginning of the range, inclusive
-    j is the end       of the range, inclusive
-    v is the max cycle length
     """
     # w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
+    for i in l:
+        w.write(str(i) + '\n')
+
+    w.write('\n')
+
 
 # -------------
 # xml_solve
@@ -166,15 +165,15 @@ def xml_solve (r, w) :
     case_list = []
     q_string = ''
     t_string = ''
+    output = []
 
     while xml_read (read_list, case_list) :
         q_string = case_list[len(case_list) - 1]
         case_list.pop()
         t_string = " ".join(case_list)
-        print t_string
-        print q_string
-        xml_eval (t_string, q_string)
-        # xml_print(w, a[0], a[1], v)
-        # i = tree.getiterator()
-        # print i
+        # print t_string
+        # print q_string
+        output = xml_eval (t_string, q_string)
+        xml_print(w, output)
         case_list[:] = []
+
