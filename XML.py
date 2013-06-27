@@ -28,11 +28,9 @@ def xml_read (r, c) :
     i = 0
     while (not r[0].isspace()) :
         c.append(r[0])
-        # print c[i]
-        # print r[0]
         r.remove(c[i]) # removes the first element of r
         i += 1
-        # print i
+
         if not r:
             return True
 
@@ -42,43 +40,20 @@ def xml_read (r, c) :
     assert len(c) > 0
     return True
 
-# -------------
-# xml_ElementTree
-# -------------
-
-# def xml_ElementTree (string_list):
-#     """
-#     c is a list of strings for this case by line
-#     t is the XML ElementTree
-#     q is the query ElementTree
-
-#     """
-#     # from xml.etree.ElementTree import fromstring
-
-#     q_string = c[c.length - 1]
-#     q = ElementTree(fromstring(q_string))
-#     c.pop()
-#     t_string = " ".join(c)
-#     t = ElementTree(fromstring(t_string))
-#     return t 
-
 
 # ------------
 # xml_eval
 # ------------
 
-def xml_eval (i, j) :
+def xml_eval (c, q) :
     """
-    i is the beginning of the range, inclusive
-    j is the end       of the range, inclusive
-    return the max cycle length in the range [i, j]
+    c is the current case as string
+    q is the query as string
+    returns a list of int's representing the output
     """
-    assert i > 0
-    assert j > 0
     # <your code>
 
     
-    return v
 
 # -------------
 # xml_print
@@ -105,25 +80,4 @@ def xml_solve (r, w) :
     w is a writer
     """
     
-    read_list = r.readlines() #list of strings by line
-    # print len(read_list)
-    case_list = []
-
-    while xml_read (read_list, case_list) :
-        q_string = case_list[len(case_list) - 1]
-        print q_string
-        query = ElementTree.parse(StringIO(q_string))
-        case_list.pop()
-        t_string = " ".join(case_list)
-        print t_string
-        tree = ElementTree.parse(StringIO(t_string))
-        # xml_print(w, a[0], a[1], v)
-
-        eval_list = tree.findall('.//Team/Cooly/../../JiaJia')
-        # iterfind = tree.iterfind('.//Team/Cooly')
-        # eval_list = tree.findall('/JiaJia/Team')
-        # eval_list = tree.findall('./Cooly')
-        print len(eval_list)
-        # print eval_list[0].iter()
-        # print iterfind
-        case_list[:] = []
+    
