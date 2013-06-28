@@ -1,48 +1,14 @@
-FFFFF
+..F...........
 ======================================================================
-FAIL: test_print (__main__.TestXML)
+FAIL: test_eval_3 (__main__.TestXML)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "TestXML.py", line 97, in test_print
-    self.assert_(w.getvalue() == "1\n 2\n 3\n")
-AssertionError: False is not true
-
-======================================================================
-FAIL: test_print_2 (__main__.TestXML)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "TestXML.py", line 102, in test_print_2
-    self.assert_(w.getvalue() == "100\n 200\n 125\n")
-AssertionError: False is not true
-
-======================================================================
-FAIL: test_print_3 (__main__.TestXML)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "TestXML.py", line 107, in test_print_3
-    self.assert_(w.getvalue() == "201\n 210\n 89\n")
-AssertionError: False is not true
-
-======================================================================
-FAIL: test_print_4 (__main__.TestXML)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "TestXML.py", line 112, in test_print_4
-    self.assert_(w.getvalue() == "900\n 1000\n 174\n")
-AssertionError: False is not true
-
-======================================================================
-FAIL: test_read (__main__.TestXML)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "TestXML.py", line 43, in test_read
-    self.assert_(t_string ==  '<a><b></b></a>')
+  File "TestXML.py", line 106, in test_eval_3
+    self.assert_(v == [1, 6])
 AssertionError: False is not true
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 14 tests in 0.003s
 
-FAILED (failures=5)
+FAILED (failures=1)
 TestXML.py
-
-

@@ -174,8 +174,6 @@ def xml_solve (r, w) :
         q_string = case_list[len(case_list) - 1]
         case_list.pop()
         t_string = " ".join(case_list)
-        # print t_string
-        # print q_string
         output = xml_eval (t_string, q_string)
         xml_print(w, output)
         case_list[:] = []

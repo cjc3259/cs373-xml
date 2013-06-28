@@ -68,26 +68,42 @@ class TestXML (unittest.TestCase) :
     # ----
 
     def test_eval_1 (self) :
+        v = xml_eval('<THU> <Team> <ACRush></ACRush><Jelly></Jelly><Cooly></Cooly> </Team> </THU>', '<Team><ACRush></ACRush></Team>')
+        self.assert_(v == [1, 2])
+
+    def test_eval_2 (self) :
         v = xml_eval('''<THU>
                             <Team>
                                 <ACRush></ACRush>
                                 <Jelly></Jelly>
                                 <Cooly></Cooly>
-                            </Team>''', '''<Team><ACRush></ACRush></Team>''')
-        self.assert_(v == [1, 2])
+                            </Team>
+                            <JiaJia>
+                                <Team>
+                                    <Ahyangyi></Ahyangyi>
+                                    <Dragon></Dragon>
+                                    <Cooly><Amber></Amber></Cooly>
+                                </Team>
+                            </JiaJia>
+                        </THU>''', '<Team><Cooly></Cooly></Team>')
+        self.assert_(v == [2, 2, 7])
 
-    # def test_eval_2 (self) :
-    #     v = xml_eval(100, 200)
-    #     self.assert_(v == 125)
-
-    # def test_eval_3 (self) :
-    #     v = xml_eval(201, 210)
-    #     self.assert_(v == 89)
-
-    # def test_eval_4 (self) :
-    #     v = xml_eval(900, 1000)
-    #     self.assert_(v == 174)
-
+    def test_eval_3 (self) :
+        v = xml_eval('''<THU>
+                            <Team>
+                                <ACRush></ACRush>
+                                <Jelly></Jelly>
+                                <Cooly></Cooly>
+                            </Team>
+                            <JiaJia>
+                                <Team>
+                                    <Ahyangyi></Ahyangyi>
+                                    <Dragon></Dragon>
+                                    <Cooly><Amber></Amber></Cooly>
+                                </Team>
+                            </JiaJia>
+                        </THU>''', '<Team><Ahyangyi></Ahyangyi><Cooly><Amber></Amber></Cooly><Dragon></Dragon></Team>')
+        self.assert_(v == [1,7])
     # -----
     # print
     # -----
