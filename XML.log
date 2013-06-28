@@ -1,0 +1,53 @@
+commit aab152e696183ccfc26a3f6ed71004491442bcc0
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 19:16:19 2013 -0500
+
+    with TestXML.py.out
+
+commit 1d4e08c7429e4861217d330139e334fc1a49d1a0
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 19:15:16 2013 -0500
+
+    unit tests are good
+
+commit aa30eb91684855822d7e7f1511eec1e2a5921b05
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 18:47:55 2013 -0500
+
+    with acceptance test and most of unit test
+
+commit 22a4f259139656a2338c1b984b5de4b5e18f17cc
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 17:17:09 2013 -0500
+
+    xml_print and xml_solve are complete
+
+commit 46b56cbd302afb0c7e3b3daabd1f0bc556ddc3c9
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 16:44:34 2013 -0500
+
+    xml_eval complete getting correct answers (I hope)
+
+commit 6c27a8cffad82c6aa8e769afecd6863f74ada0e9
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 16:40:29 2013 -0500
+
+    axml_eval with element trees and actual evaluation
+
+commit dbede43b86d5b6ac3b3b0f1522e464ce6f7982c4
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 16:37:58 2013 -0500
+
+    axml_solve
+
+commit eadb936942d801fa90d043950d2e1cec5c8af22b
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Thu Jun 27 16:35:09 2013 -0500
+
+    setup skeleton and xml_read
+
+commit 028651f440ecc2f544b15200f5f7901c5a54d811
+Author: Christopher Coney <cjc3259@cs.utexas.edu>
+Date:   Tue Jun 25 21:34:29 2013 -0500
+
+    initial commit
