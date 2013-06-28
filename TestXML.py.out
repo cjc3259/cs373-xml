@@ -1,14 +1,6 @@
-..F...........
-======================================================================
-FAIL: test_eval_3 (__main__.TestXML)
+..............
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "TestXML.py", line 106, in test_eval_3
-    self.assert_(v == [1, 6])
-AssertionError: False is not true
+Ran 14 tests in 0.006s
 
-----------------------------------------------------------------------
-Ran 14 tests in 0.003s
-
-FAILED (failures=1)
+OK
 TestXML.py
